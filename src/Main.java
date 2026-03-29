@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)  {
         ContactLogic contact_book = new ContactLogic();
+        contact_book.loadFromFile();
         Scanner myObj = new Scanner(System.in);
 
         while(true){
@@ -54,6 +55,7 @@ public class Main {
             break;
         case 5:
             System.out.println("Bye");
+            contact_book.saveToFile();
             myObj.close();
             return;
         default:

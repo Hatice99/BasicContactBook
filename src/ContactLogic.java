@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -25,6 +30,39 @@ public class ContactLogic {
             }
         }
         return false;
+    }
+
+    public void saveToFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("contacts.txt"))) {
+            for (ContactDataModel c : contacts) {
+                writer.write(c.getName() + "," +
+                        c.getPhone_number() + "," +
+                        c.getEmail() + "\n");
+            }
+            writer.close();
+            System.out.println("Contacts saved!");
+
+        } catch (IOException e) {
+            System.out.println("Error while saving contacts!");
+        }
+    }
+
+    public void loadFromFile(){
+        try (BufferedReader reader = new BufferedReader(new FileReader("contacts.txt"))) {
+            String line; 
+            while((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                String name = parts[0];
+                String phone = parts[1];
+                String email = parts[2];
+
+                contacts.add(new ContactDataModel(name, phone, email));
+            
+            }
+            
+        } catch (IOException e) {
+            System.out.println("Error while loading contacts!");
+        }
     }
 
     public void addContact(String name, String phone_number, String email) {
