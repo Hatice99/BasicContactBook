@@ -34,23 +34,21 @@ public class Main {
             contact_book.viewContact();
             break;
         case 3:
-            System.out.println("Enter the index of the contact:");
-            int index = myObj.nextInt();
-            myObj.nextLine();
+            System.out.println("Enter the name of the contact:");
+            String name_to_edit = myObj.nextLine();
             System.out.println("Enter the name");
             String new_name = myObj.nextLine();
             System.out.println("Enter the phone number");
             String new_phone_number = myObj.nextLine();
             System.out.println("Enter the email");
             String new_email = myObj.nextLine();
-            contact_book.editContact(index-1, new_name, new_phone_number, new_email);
+            contact_book.editContact(name_to_edit, new_name, new_phone_number, new_email);
             System.out.println();
             break;
         case 4:
-            System.out.println("Enter the index of the contact:");
-            int index_to_delete = myObj.nextInt();
-            myObj.nextLine();
-            contact_book.deleteContact(index_to_delete-1);
+            System.out.println("Enter the name of the contact:");
+            String name_to_delete = myObj.nextLine();
+            contact_book.deleteContact(name_to_delete);
             System.out.println();
             break;
         case 5:

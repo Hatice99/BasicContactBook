@@ -1,2 +1,3 @@
-hati,0987,hati@gmail
-enes,1234,enes@gmail
+hati,0987,hati@g
+enes,3465,enes@e
+zula,876543,zula@zula
