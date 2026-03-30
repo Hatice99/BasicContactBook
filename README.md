@@ -1,18 +1,43 @@
-## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+# BasicContactBook
 
-## Folder Structure
+BasicContactBook is a simple Java application for managing a list of contacts. It allows users to add, view, update, or delete contact information using a text-based interface.
 
-The workspace contains two folders by default, where:
+## Features
+- Add new contacts
+- View all contacts
+- Update existing contacts
+- Delete contacts
+- Store contacts in a text file (`contacts.txt`)
+- Simple and easy-to-understand code structure
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Project Structure
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+The main files are:
 
-## Dependency Management
+- `contacts.txt`: Stores all contact information in plain text format.
+- `Main.java`: The entry point of the application.
+- `ContactLogic.java`: Contains the logic for adding, viewing, updating, and deleting contacts.
+- `ContactDataModel.java`: Defines the data structure for a contact.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Prerequisites
+- Java Development Kit (JDK) 8 or higher
+
+### Compiling the Project
+1. Open a terminal and navigate to the project directory.
+2. Compile the source files:
+	```
+	javac -d bin src/*.java
+	```
+
+### Running the Application
+1. Run the program from the `bin` directory:
+	```
+	java -cp bin Main
+	```
+
+## Usage
+- Follow the on-screen prompts to manage contacts.
+- Contacts are saved in `contacts.txt` in the project root.
+
