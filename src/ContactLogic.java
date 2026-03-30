@@ -6,9 +6,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+// Handles the logic for managing contacts (add, view, update, delete, file operations)
 public class ContactLogic {
+    // List to store all contacts
     private ArrayList<ContactDataModel> contacts = new ArrayList<>();
 
+    // Validates user input for contact fields
     public boolean validateInput(String name, String phone_number, String email) {
         if (name == null || name.trim().isEmpty()) {
             System.out.println("Name cannot be empty!");
@@ -23,6 +26,7 @@ public class ContactLogic {
         return true;
     }
 
+    // Checks for duplicate contacts by name, phone, or email
     public boolean isDuplicate(String name, String phone_number, String email) {
         for (ContactDataModel c : contacts) {
             if (c.getName().equals(name) || c.getPhone_number().equals(phone_number) || c.getEmail().equals(email)) {
@@ -32,6 +36,7 @@ public class ContactLogic {
         return false;
     }
 
+    // Saves all contacts to contacts.txt
     public void saveToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("contacts.txt"))) {
             for (ContactDataModel c : contacts) {
@@ -47,6 +52,7 @@ public class ContactLogic {
         }
     }
 
+    // Loads contacts from contacts.txt at startup
     public void loadFromFile() {
         try (BufferedReader reader = new BufferedReader(new FileReader("contacts.txt"))) {
             String line;

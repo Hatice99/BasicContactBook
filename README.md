@@ -9,7 +9,6 @@ BasicContactBook is a simple Java application for managing a list of contacts. I
 - Update existing contacts
 - Delete contacts
 - Store contacts in a text file (`contacts.txt`)
-- Simple and easy-to-understand code structure
 
 
 ## Project Structure

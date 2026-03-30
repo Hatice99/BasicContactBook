@@ -1,8 +1,10 @@
+// Data model class representing a contact
 public class ContactDataModel {
     private String name;
     private String phone_number;
     private String email;
 
+    // Constructor to initialize a contact
     public ContactDataModel(String name, String phone_number, String email) {
         this.name = name;
         this.phone_number = phone_number;
